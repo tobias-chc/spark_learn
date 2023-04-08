@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "spark-learn"
+version = "0.1.0"
+description = "Small package to learn Spark"
+authors = ["Tobias Chavarria <tobias.chavarria.castro@gmail.com>"]
+readme = "README.md"
+packages = [{include = "spark_learn", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pyspark = "^3.3.2"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
