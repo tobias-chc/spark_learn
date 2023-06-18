@@ -21,6 +21,10 @@ if __name__ == "__main__":
 
     #Processing code
     survey_df = load_csv(spark, sys.argv[1])
+    partitioned_survey_df = survey_df.repartition(2)
+    count_df = count_by_country(partitioned_survey_df)
+
+    logger.info(count_df.collect())
 
     logger.info("Stopping Hello Spark!")
     spark.stop()

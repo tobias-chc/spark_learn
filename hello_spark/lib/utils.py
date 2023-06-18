@@ -19,3 +19,10 @@ def load_csv(spark: SparkSession, file_path: str) -> DataFrame:
         .option("header", "true") \
         .option("inferSchema", "true") \
         .csv(file_path)
+
+
+def count_by_country(input_df: DataFrame) -> DataFrame:
+    return input_df.where("Age < 40") \
+        .select(["Age", "Gender", "Country", "state"]) \
+        .groupBy("Country") \
+        .count()
