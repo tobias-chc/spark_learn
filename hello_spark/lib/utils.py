@@ -14,7 +14,7 @@ def get_spark_app_conf(spark_conf_path: str = "spark.conf") -> SparkConf:
     return spark_conf
 
 
-def load_survey_df(spark: SparkSession, file_path: str) -> DataFrame:
+def load_csv(spark: SparkSession, file_path: str) -> DataFrame:
     return spark.read \
         .option("header", "true") \
         .option("inferSchema", "true") \
