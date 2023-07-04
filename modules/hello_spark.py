@@ -3,10 +3,10 @@ from pyspark.sql import SparkSession
 from lib.logger import Log4j
 from lib.utils import get_spark_app_conf, load_csv, count_by_country
 
-SPARK_HOME="/Users/tobiaschavarria/Library/Caches/pypoetry/virtualenvs/spark-learn-iD0jGMx_-py3.11/lib/python3.11/site-packages/pyspark"
+# SPARK_HOME="/Users/tobiaschavarria/Library/Caches/pypoetry/virtualenvs/spark-learn-iD0jGMx_-py3.11/lib/python3.11/site-packages/pyspark"
 
 if __name__ == "__main__":
-    conf = get_spark_app_conf()
+    conf = get_spark_app_conf(spark_conf_path="hello_spark.conf")
     spark = SparkSession.builder \
         .config(conf=conf) \
         .getOrCreate()
